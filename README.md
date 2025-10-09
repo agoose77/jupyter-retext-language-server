@@ -57,6 +57,7 @@ These define the name (which maps to the plugin name in the properties schema), 
 - Add proper schema merging.
 - Validate plugin subschemas
 - Validate plugin ESM modules
+- Implement upstream fixes to expose the config — https://github.com/unifiedjs/unified-language-server/issues/69
 
 [unified-language-server]: https://github.com/unifiedjs/unified-language-server
 [retext]: https://github.com/retextjs/retext
