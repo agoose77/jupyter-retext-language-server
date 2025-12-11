@@ -64,18 +64,21 @@ const mainPlugin = () => {
 };
 
 const pluginPaths = process.env.RETEXT_PLUGIN_PATHS.split(":");
-await Promise.all(
-  pluginPaths.map(async (path) => {
-    const { name, plugin } = await import(path);
-    pluginManager.addPlugin(name, plugin);
-  }),
-);
+async function main() {
+  await Promise.all(
+    pluginPaths.map(async (path) => {
+      const { name, plugin } = await import(path);
+      pluginManager.addPlugin(name, plugin);
+    }),
+  );
 
-createUnifiedLanguageServer({
-  ignoreName: ".retextignore",
-  pluginPrefix: "retext",
-  processorName: "retext",
-  processorSpecifier: "retext",
-  defaultProcessor: retext,
-  plugins: [[mainPlugin, {}]],
-});
+  createUnifiedLanguageServer({
+    ignoreName: ".retextignore",
+    pluginPrefix: "retext",
+    processorName: "retext",
+    processorSpecifier: "retext",
+    defaultProcessor: retext,
+    plugins: [[mainPlugin, {}]],
+  });
+}
+main();
