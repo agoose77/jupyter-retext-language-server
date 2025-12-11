@@ -4,7 +4,7 @@ from .utils import get_shared_data_path
 
 retext_spell = {
     "path": os.fspath(
-        get_shared_data_path() / "jupyter-retext-language-server/bin/retext-spell.mjs"
+        get_shared_data_path() / "jupyter-retext-language-server/bin/retext-spell.cjs"
     ),
     "properties_schema": {
         "retext.plugins.retext-spell.enabled": {

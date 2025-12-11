@@ -49,7 +49,7 @@ class RetextLanguageServer(SpecBase):
                         get_shared_data_path()
                         / "jupyter-retext-language-server"
                         / "bin"
-                        / "server.mjs"
+                        / "server.cjs"
                     ),
                     *self.args,
                 ],
