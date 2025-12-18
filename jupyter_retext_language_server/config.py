@@ -1,5 +1,5 @@
 from traitlets.config import SingletonConfigurable
-from traitlets import Instance, List, Tuple
+from traitlets import Instance
 
 import json
 import pathlib

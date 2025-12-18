@@ -18,9 +18,10 @@ async function loadDictionary(locale) {
   };
 }
 
-async function _createSpellPluginForLocale(locale) {
+async function _createSpellPluginForLocale(locale, personalDictionary) {
   const dictionary = await loadDictionary(locale);
-  return retextSpell({ dictionary });
+  console.log(personalDictionary);
+  return retextSpell({ dictionary, personal: personalDictionary.join("\n") });
 }
 const createSpellPluginForLocale = memoize(_createSpellPluginForLocale, {
   promise: true,
@@ -30,6 +31,7 @@ createSpellPluginForLocale("en");
 
 export const name = "retext-spell";
 export async function plugin(spellConfig) {
-  const { dictionary: locale } = spellConfig;
-  return await createSpellPluginForLocale(locale);
+  const { dictionary: locale, "personal-dictionary": personalDictionary } =
+    spellConfig;
+  return await createSpellPluginForLocale(locale, personalDictionary);
 }
