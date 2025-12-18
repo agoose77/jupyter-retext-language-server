@@ -4,13 +4,21 @@ from .utils import get_shared_data_path
 
 retext_spell = {
     "path": os.fspath(
-        get_shared_data_path() / "jupyter-retext-language-server/bin/retext-spell.cjs"
+        get_shared_data_path()
+        / "jupyter-retext-language-server"
+        / "bin"
+        / "retext-spell.cjs"
     ),
     "properties_schema": {
         "retext.plugins.retext-spell.enabled": {
             "type": "boolean",
             "default": True,
             "description": "Enable retext-spell plugin.",
+        },
+        "retext.plugins.retext-spell.personal-dictionary": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Personal spelling dictionary. Use * as a prefix to prohibit certain spellings. Use Word/Affix to associate Word with a pre-defined Affix.",
         },
         "retext.plugins.retext-spell.dictionary": {
             "type": "string",

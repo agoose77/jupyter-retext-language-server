@@ -50,7 +50,7 @@ class PluginManager {
       try {
         await impl(tree, file, next);
       } catch (error) {
-        file.fail(String(error));
+        file.fail(`${name} failed with ${error}`);
       }
     }
     console.error("Processed retext plugins");
