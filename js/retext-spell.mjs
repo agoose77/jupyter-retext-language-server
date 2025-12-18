@@ -20,7 +20,6 @@ async function loadDictionary(locale) {
 
 async function _createSpellPluginForLocale(locale, personalDictionary) {
   const dictionary = await loadDictionary(locale);
-  console.log(personalDictionary);
   return retextSpell({ dictionary, personal: personalDictionary.join("\n") });
 }
 const createSpellPluginForLocale = memoize(_createSpellPluginForLocale, {
