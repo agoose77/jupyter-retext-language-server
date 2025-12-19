@@ -10,7 +10,7 @@ dependencies = [
   "jupyter_lsp",
   "traitlets"
 ]
-version = "1.0.0"
+version = "1.0.0.post1"
 
 [tool.hatch.build.targets.wheel]
 artifacts = ["jupyter_retext_language_server/dist/*"]
