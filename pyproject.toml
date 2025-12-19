@@ -1,6 +1,8 @@
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+readme = "README.md"
+description = "A language server for Markdown documents that supports retext plugins"
 
 [project]
 name = "jupyter-retext-language-server"
