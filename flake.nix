@@ -51,7 +51,7 @@
                 # Stand up new venv
                 ${python.interpreter} -m venv .venv
 
-                ".venv/bin/python" -m pip install -r requirements.txt
+                ".venv/bin/python" -m pip install jupyterlab -e .
 
                 # Add a marker that marks this venv as "ready"
                 touch ".venv/$__py_hash"
