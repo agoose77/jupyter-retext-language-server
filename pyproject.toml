@@ -1,8 +1,6 @@
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
-readme = "README.md"
-description = "A language server for Markdown documents that supports retext plugins"
 
 [project]
 name = "jupyter-retext-language-server"
@@ -10,7 +8,9 @@ dependencies = [
   "jupyter_lsp",
   "traitlets"
 ]
-version = "1.0.0.post1"
+version = "1.0.0.post2"
+readme = "README.md"
+description = "A language server for Markdown documents that supports retext plugins"
 
 [tool.hatch.build.targets.wheel]
 artifacts = ["jupyter_retext_language_server/dist/*"]
