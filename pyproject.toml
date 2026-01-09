@@ -8,7 +8,7 @@ dependencies = [
   "jupyter_lsp",
   "traitlets"
 ]
-version = "1.0.0.post2"
+version = "1.0.1"
 readme = "README.md"
 description = "A language server for Markdown documents that supports retext plugins"
 
