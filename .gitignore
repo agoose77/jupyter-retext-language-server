@@ -1,2 +1,2 @@
 node_modules
-*.cjs
+jupyter_retext_language_server/dist/
